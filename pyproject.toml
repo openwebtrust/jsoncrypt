@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jsoncrypt"
+version = "2025.04.28-1"
+requires-python = ">=3.6"
+description = "Symmetric encryption and decryption utility for JSON data"
+authors = [ {'name' = 'Open Web Trust', 'email' = 'jsoncrypt-support@openwebtrust.org' } ]
+maintainers = [ {'name' = 'Open Web Trust', 'email' = 'jsoncrypt-support@openwebtrust.org' } ]
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["json", "encryption", "decryption", "utility", "openwebtrust"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Utilities" ,
+]
+dependencies = [
+    'pycryptodome',
+    'pytest',
+]
+
+[project.scripts]
+jsoncrypt = "jsoncrypt.jsoncrypt:__start__"
+
+[project.urls]
+Homepage = "https://www.openwebtrust.org"
+Documentation = "https://openwebtrust.org"
+Repository = "https://github.com/openwebtrust/jsoncrypt"
+Issues = "https://github.com/openwebtrust/jsoncrypt/issues"
+ChangeLog = "https://github.com/openwebtrust/jsoncrypt/blob/main/ChangeLog.md"
