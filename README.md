@@ -1,4 +1,4 @@
-# JsonCrypt Project
+# JSONCrypt Project
 
 This project provides a simple and secure way to encrypt and decrypt JSON data using strong (quantum-resistant) symmetric encryption. It is designed to be easy to use and integrate into your existing systems.
 
@@ -25,7 +25,7 @@ based on the bcrypt algorithm and SHA3-512 hash function.
 
 ## Installation
 
-To install the JsonCrypt package, you need to have Python 3.6 or higher installed on your system. You can install the JsonCrypt package using pip:
+To install the JSONCrypt package, you need to have Python 3.6 or higher installed on your system. You can install the JSONCrypt package using pip:
 
 ```bash
 python3 -m venv .venv
@@ -47,7 +47,7 @@ Please see the [USAGE.md](docs/USAGE.md) file for detailed usage instructions.
 
 ## Support
 
-If you have any questions or need help with the JsonCrypt package, please contact us at
+If you have any questions or need help with the JSONCrypt package, please contact us at
 jsoncrypt-support {@} openwebtrust.org, or visit our website at [www.openwebtrust.org](https://www.openwebtrust.org).
 
 ## Acknowledgements
@@ -60,4 +60,4 @@ contributors for their help and support.
 Please see the [CONTRIBUTING.md](docs/CONTRIBUTING.md) file for information on how to contribute
 to this project.
 
-Thank you for using JsonCrypt!
+Thank you for using JSONCrypt!
