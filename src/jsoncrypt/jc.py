@@ -2,14 +2,16 @@ import argparse, json
 from sys import stdout, stdin
 from jsoncrypt.jsoncrypt import JSONCrypt as jc
 
+# Builds the command line argument parser
 parser = argparse.ArgumentParser(description='Encrypt or decrypt JSON data.')
 parser.add_argument('-cmd', type=str, choices=['enc', 'dec'], required=True, help='Command to execute')
+parser.add_argument('-json', type=str, help='JSON string to encrypt or decrypt')
 parser.add_argument('-infile', type=str, help='Input file path for JSON to encrypt')
 parser.add_argument('-outfile', type=str, help='Output file path for encrypted JSON')
-parser.add_argument('-json', type=str, help='JSON string to encrypt or decrypt')
 parser.add_argument('-secret', type=str, help='Secret key for encryption/decryption')
-# parser.add_argument('--pretty', type=bool, help='Pretty print JSON output')
 parser.add_argument('-pretty', action='store_true', help='Pretty print JSON output')
+
+# Parses the command line arguments
 args = parser.parse_args()
 
 def __start__():
