@@ -35,7 +35,7 @@ dependencies = [
 ]
 
 [project.scripts]
-jc = "jsoncrypt.jc:__start__"
+jc = "cli.jc:__start__"
 
 [project.urls]
 Homepage = "https://www.openwebtrust.org"
