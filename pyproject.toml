@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jsoncrypt"
-version = "2025.04.28-1"
+version = "2025.05.11-1"
 requires-python = ">=3.6"
 description = "Symmetric encryption and decryption utility for JSON data"
 authors = [ {'name' = 'Open Web Trust', 'email' = 'jsoncrypt-support@openwebtrust.org' } ]
