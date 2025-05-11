@@ -49,14 +49,14 @@ writing any code.
 To encrypt JSON data using the `jc` CLI tool, you can use the following command:
 
 ```shell
-$ jc --cmd enc --json '{"key": "value"}' --secret 'test' --outfile 'encrypted.json'
+$ jc --cmd enc --json '<value>' --secret 'test' --outfile 'encrypted.json'
 ```
 
-This command will encrypt the JSON data `{"key": "value"}` using the secret `test` and save the
-encrypted data to the file `encrypted.json`. The `--cmd` option specifies the command to run (in
-this case, `enc` for encryption), the `--json` option specifies the JSON data to encrypt, and the
-`--secret` option specifies the secret key to use for encryption. The `--outfile` option specifies
-the output file where the encrypted data will be saved.
+This command will encrypt the JSON data `<value>` (e.g., `{"key": "value"}`) by using the secret
+`test` and save the encrypted data to the file `encrypted.json`. The `--cmd` option specifies the
+command to run (in this case, `enc` for encryption), the `--json` option specifies the JSON data to
+encrypt, and the `--secret` option specifies the secret key to use for encryption. The `--outfile`
+option specifies the output file where the encrypted data will be saved.
 
 
 Alternatively, you can use the `--infile` option to specify an input file containing the JSON data
@@ -65,6 +65,16 @@ to encrypt. For example:
 This command will read the JSON data from the file `input.json`, encrypt it using the secret `test`, and
 save the encrypted data to the file `encrypted.json`. The `--infile` option specifies the input file
 containing the JSON data to encrypt.
+
+#### Examples
+
+```shell
+$ jc -cmd enc -secret test -outfile encrypted.js -json '{"key": "value1", "name": "value2", "description": "value3"}'
+ ```
+
+```shell
+$ jc -cmd enc -secret test -pretty -infile 'encrypted.js'
+ ```
 
 ### Decrypting JSON Data
 
