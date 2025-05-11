@@ -8,6 +8,8 @@ parser.add_argument('--infile', type=str, help='Input file path for JSON to encr
 parser.add_argument('--outfile', type=str, help='Output file path for encrypted JSON')
 parser.add_argument('--json', type=str, help='JSON string to encrypt or decrypt')
 parser.add_argument('--secret', type=str, help='Secret key for encryption/decryption')
+# parser.add_argument('--pretty', type=bool, help='Pretty print JSON output')
+parser.add_argument('--pretty', action='store_true', help='Pretty print JSON output')
 args = parser.parse_args()
 
 def __start__():
@@ -40,7 +42,11 @@ def __start__():
                 file.write(json.dumps(encrypted_json))
         else:
             with stdout as file:
-                file.write(json.dumps(encrypted_json))
+                if args.pretty:
+                    file.write(json.dumps(encrypted_json, indent=4))
+                    file.write("\n")
+                else:
+                    file.write(json.dumps(encrypted_json))
 
     elif args.cmd == 'dec':
 
@@ -64,7 +70,11 @@ def __start__():
         # the output is written to stdout
         if args.outfile:
             with open(args.outfile, 'w') as file:
-                file.write(json.dumps(decrypted_json, indent=4))
+                file.write(json.dumps(decrypted_json))
         else:
-            with open('-', 'w') as file:
-                file.write(json.dumps(decrypted_json, indent=4))
+            with stdout as file:
+                if args.pretty:
+                    file.write(json.dumps(decrypted_json, indent=4))
+                    file.write("\n")
+                else:
+                    file.write(json.dumps(decrypted_json))
