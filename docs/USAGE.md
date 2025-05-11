@@ -27,6 +27,7 @@ introduces the `iv` as follows:
     "iv": bytes, // The initialization vector used with CBC mode
     "data" : bytes // The cleartext data that needs to be encrypted
 }
+```
 
 Where the options are:
 
@@ -36,6 +37,66 @@ Where the options are:
 * `iv` (bytes): The initialization vector (only used with CBC mode).
 * `data` (bytes): The cleartext data that needs to be encrypted (bytes).
 * `tag` (bytes): The tag used with AEAD ciphers (bytes).
+
+## CLI Tool (jc)
+
+The `jc` command-line interface (CLI) tool is a simple command-line utility that allows you to encrypt
+and decrypt JSON data using the JSONCrypt library. It provides a convenient way to use the library without
+writing any code.
+
+### Encrypting JSON Data
+
+To encrypt JSON data using the `jc` CLI tool, you can use the following command:
+
+```shell
+$ jc --cmd enc --json '{"key": "value"}' --secret 'test' --outfile 'encrypted.json'
+```
+
+This command will encrypt the JSON data `{"key": "value"}` using the secret `test` and save the
+encrypted data to the file `encrypted.json`. The `--cmd` option specifies the command to run (in
+this case, `enc` for encryption), the `--json` option specifies the JSON data to encrypt, and the
+`--secret` option specifies the secret key to use for encryption. The `--outfile` option specifies
+the output file where the encrypted data will be saved.
+
+
+Alternatively, you can use the `--infile` option to specify an input file containing the JSON data
+to encrypt. For example:
+
+This command will read the JSON data from the file `input.json`, encrypt it using the secret `test`, and
+save the encrypted data to the file `encrypted.json`. The `--infile` option specifies the input file
+containing the JSON data to encrypt.
+
+### Decrypting JSON Data
+
+To decrypt JSON data using the `jc` CLI tool, you can use the following command:
+
+```bash
+$ jc --cmd 'dec' --json '<json_data>' --secret '<value>' --outfile '<output>'
+```
+
+This command will decrypt the JSON data `{"key": "value"}` using the secret `test` and save the
+decrypted data to the file `decrypted.json`. The `--cmd` option specifies the command to run (in
+this case, `dec` for decryption), the `--json` option specifies the JSON data to decrypt, and the
+`--secret` option specifies the secret key to use for decryption. The `--outfile` option specifies
+the output file where the decrypted data will be saved.
+
+Alternatively, you can use the `--infile` option to specify an input file containing the JSON data
+to decrypt.
+
+```bash
+$ jc --cmd dec --infile 'encrypted.json' --secret 'test' --outfile 'decrypted.json'
+```
+
+#### Examples
+
+```shell
+$ jc --cmd dec --json '{"algorithm": "AES", "encryption-mode": 11, "nonce": "51nbhCgIlQFnnCz1EcNaDw==", "data": "T8KDMcQPVcrq72bbBaDdRQ==", "tag": "-pJGDF5eOy2g9-2kT1mcbA=="}' --secret 'test' --outfile 'decrypted.json'
+```
+
+```shell
+$ jc --cmd dec --infile 'encrypted.json' --secret 'test' --outfile 'decrypted.json'
+```
+
 
 ## Encrypting Data
 

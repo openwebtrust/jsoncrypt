@@ -410,7 +410,6 @@ class JSONCrypt():
 
         return_value = None
         try:
-            print(f"**** DATA: {data} ******")
             return_value = json.loads(data)
         except Exception as e:
             OWT_log_msg(f"Cannot decode the decrypted data: {e}", is_error=True, raise_exception=True)

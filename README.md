@@ -41,6 +41,12 @@ python3 -m venv .venv
 pip install -e .
 ```
 
+To execute the tests, you can use the following command:
+
+```bash
+pytest -v --tb=short
+```
+
 ## Usage
 
 Please see the [USAGE.md](docs/USAGE.md) file for detailed usage instructions.
